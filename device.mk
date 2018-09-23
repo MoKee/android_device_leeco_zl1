@@ -21,6 +21,9 @@
 # definition file).
 #
 
+# Device was launched with M
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
+
 $(call inherit-product-if-exists, vendor/leeco/zl1/zl1-vendor.mk)
 
 # Overlays
@@ -49,10 +52,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m
-
-# Fake logprint for fingerprint libs
-PRODUCT_PACKAGES += \
-    fakelogprint
 
 # Fingerprint
 PRODUCT_PACKAGES += \
